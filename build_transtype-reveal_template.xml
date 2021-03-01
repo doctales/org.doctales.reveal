@@ -259,13 +259,13 @@
         <description>Build XHTML output from dita inner and outer topics, which will adjust the directory.</description>
         <xslt basedir="${dita.temp.dir}"
             destdir="${output.dir}"
-            includesfile="${dita.temp.dir}${file.separator}${fullditatopicfile}"
             reloadstylesheet="${dita.xhtml.reloadstylesheet}"
             classpathref="dost.class.path"
             extension=".html"
             style="${dita.plugin.org.doctales.reveal.dir}/xsl/reveal.xsl"
             filenameparameter="FILENAME"
             filedirparameter="FILEDIR">
+            <ditafileset format="dita" processingRole="normal"/>
             <excludesfile name="${dita.temp.dir}${file.separator}${resourceonlyfile}" if:set="resourceonlyfile"/>
             <includesfile name="${dita.temp.dir}${file.separator}${chunkedtopicfile}" if:set="chunkedtopicfile"/>
             <xmlcatalog refid="dita.catalog"/>
